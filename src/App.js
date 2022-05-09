@@ -14,6 +14,11 @@ function App() {
   //방법1. 파일이 클 경우는 모든 파일이 다운로드되고 나서 다운로드 될 수 있도록 useEffect를 활용
   useEffect(() => {
     const component = import("./components/ImageModal");
+
+    //아래와 같이 작성하면, 이미지가 preloading 되는 것을 확인할  수 있다.
+    const img = new Image();
+    img.src =
+      "https://stillmed.olympic.org/media/Photos/2016/08/20/part-1/20-08-2016-Football-Men-01.jpg?interpolation=lanczos-none&resize=*:800";
   }, []);
 
   //방법2. 마우스가 버튼 위에 올라왔을때 이미지모달을 불러오는 함수
